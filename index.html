@@ -496,6 +496,7 @@
             <li><a href="#benchmark">Benchmark</a></li>
             <li><a href="#training">Training</a></li>
             <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#api">API</a></li>
             <li><a href="#demos">Demos</a></li>
         </ul>
     </div>
@@ -510,6 +511,7 @@
             <span>2026-05-19</span>
         </div>
         <h1>SkyClaw-v1.0: High-Performance Agent Model at Unprecedented Value</h1>
+        <p style="margin-bottom: 24px;"><a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" style="color:#6366f1; text-decoration:none; font-weight:500; font-size:1rem;">Try it on apifree.ai &rarr;</a></p>
         <p class="lead">
             SkyClaw-v1.0 is a high-performance model designed for mainstream agent environments such as OpenClaw, Hermes, and Nanobot. Deeply optimized for OpenClaw-related tasks, it demonstrates strong capabilities in complex tool usage, multi-turn agent interactions, and real-world task execution — at pricing significantly lower than current mainstream Agent models.
         </p>
@@ -633,6 +635,46 @@
             </tbody>
         </table>
     </div>
+
+    <hr class="divider">
+
+    <!-- API Usage -->
+    <h2 id="api">API Usage</h2>
+
+    <p>SkyClaw-v1.0 is available via <a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" style="color:#6366f1; text-decoration:none; font-weight:500;">apifree.ai</a> with an OpenAI-compatible API interface. Get started in minutes:</p>
+
+    <div style="background:#1e1e2e; border-radius:10px; padding:24px; margin:24px 0; overflow-x:auto;">
+        <p style="color:#888; font-size:0.78rem; margin:0 0 12px; font-family:monospace;">cURL</p>
+<pre style="color:#e4e4ef; font-size:0.82rem; line-height:1.6; margin:0; white-space:pre; font-family:'SF Mono','Fira Code',monospace;">curl https://api.apifree.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $APIFREE_API_KEY" \
+  -d '{
+    "model": "skywork-ai/skyclaw-v1",
+    "messages": [
+      {"role": "user", "content": "Hello, SkyClaw!"}
+    ]
+  }'</pre>
+    </div>
+
+    <div style="background:#1e1e2e; border-radius:10px; padding:24px; margin:24px 0; overflow-x:auto;">
+        <p style="color:#888; font-size:0.78rem; margin:0 0 12px; font-family:monospace;">Python (OpenAI SDK)</p>
+<pre style="color:#e4e4ef; font-size:0.82rem; line-height:1.6; margin:0; white-space:pre; font-family:'SF Mono','Fira Code',monospace;">from openai import OpenAI
+
+client = OpenAI(
+    api_key="your-api-key",
+    base_url="https://api.apifree.ai/v1"
+)
+
+response = client.chat.completions.create(
+    model="skywork-ai/skyclaw-v1",
+    messages=[
+        {"role": "user", "content": "Hello, SkyClaw!"}
+    ]
+)
+print(response.choices[0].message.content)</pre>
+    </div>
+
+    <p>For full documentation, authentication setup, and advanced usage (tool calling, multi-turn conversations, streaming), visit the <a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" style="color:#6366f1; text-decoration:none; font-weight:500;">SkyClaw API page on apifree.ai &rarr;</a></p>
 
     <hr class="divider">
 
