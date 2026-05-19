@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyClaw-1.0 — Skywork AI</title>
+    <title>SkyClaw-v1.0 — Skywork AI</title>
     <style>
         * {
             margin: 0;
@@ -509,9 +509,9 @@
             <span class="tag">Model Release</span>
             <span>2026-05-19</span>
         </div>
-        <h1>SkyClaw-1.0: High-Performance Agent Model at Unprecedented Value</h1>
+        <h1>SkyClaw-v1.0: High-Performance Agent Model at Unprecedented Value</h1>
         <p class="lead">
-            SkyClaw-1.0 is a high-performance model designed for mainstream agent environments such as OpenClaw, Hermes, and Nanobot. Deeply optimized for OpenClaw-related tasks, it demonstrates strong capabilities in complex tool usage, multi-turn agent interactions, and real-world task execution — at pricing significantly lower than current mainstream Agent models.
+            SkyClaw-v1.0 is a high-performance model designed for mainstream agent environments such as OpenClaw, Hermes, and Nanobot. Deeply optimized for OpenClaw-related tasks, it demonstrates strong capabilities in complex tool usage, multi-turn agent interactions, and real-world task execution — at pricing significantly lower than current mainstream Agent models.
         </p>
     </div>
 
@@ -535,24 +535,22 @@
         </div>
     </div>
 
-    <p>SkyClaw-1.0 outperforms Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 35B A3B / 27B models across all major agent benchmarks. On Claw-related tasks, its performance approaches that of much larger closed-source models, including DeepSeek V4 Pro, Claude Opus 4.6, and Qwen 3.6 Plus.</p>
+    <p>SkyClaw-v1.0 outperforms Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 35B A3B / 27B models across all major agent benchmarks. On OpenClaw-related tasks, its performance approaches that of much larger closed-source models, including DeepSeek V4 Pro, Claude Opus 4.6, and Qwen 3.6 Plus.</p>
 
-    <p>In addition to SkyClaw-1.0, we also offer <strong>SkyClaw-1.0-lite</strong>, a much faster and cheaper model that inherits strong agentic performance (e.g., better performance compared to Minimax 2.7). This model is suitable for basic agentic tasks that are more sensitive to costs.</p>
+    <p>In addition to SkyClaw-v1.0, we also offer <strong>SkyClaw-v1.0-lite</strong>, a much faster and cheaper model that inherits strong agentic performance (e.g., better performance compared to Minimax 2.7). This model is suitable for basic agentic tasks that are more sensitive to costs.</p>
 
     <div class="callout">
-        <p>We are launching a free trial period — try SkyClaw-1.0 now. Following the trial, we will progressively open-source each model version.</p>
+        <p>We are launching a free trial period — try SkyClaw-v1.0 now. Following the trial, we will progressively open-source each model version.</p>
     </div>
 
     <!-- Benchmark -->
     <h2 id="benchmark">Strong Performance on Agent Benchmarks</h2>
 
-    <p>SkyClaw achieves outstanding results on mainstream agent benchmarks as well as internally constructed Claw task evaluations, including PinchBench-v2, Claw-Eval (including the Pass^3 stability test), Skywork-Claw-Bench (Skywork's internal OpenClaw-based agent evaluation), TAU3-Bench, and Terminal-Bench 2.0.</p>
-
-    <p>Both the standard and Lite versions significantly outperform Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 35B A3B / 27B models. Related code task metrics also show significant improvements.</p>
+    <p>Across mainstream agent benchmarks and our internally developed Claw task evaluations — including PinchBench, Claw-Eval (with the ^3 stability test), and Skywork-Claw-Bench (Skywork's in-house agent evaluation suite built on the OpenClaw environment) — both the main and lite versions outperform Minimax 2.7, DeepSeek V4 Flash, and the Qwen 3.6 35B A3B and 27B models. Substantial improvements are also observed on related code-task evaluation metrics.</p>
 
     <figure class="benchmark-figure">
         <img src="https://picture-search.tiangong.cn/skyclaw-demos/benchmark_style_chart.v1.0.png?x-oss-process=image/format,png" alt="SkyClaw benchmark results across 6 evaluation suites">
-        <figcaption>SkyClaw-1.0 and SkyClaw-1.0-Lite vs. DeepSeek V4 Flash, MiniMax M2.7, Qwen 3.6 27B, and DeepSeek V4 Pro across 6 agent benchmarks.</figcaption>
+        <figcaption>SkyClaw-v1.0 and SkyClaw-v1.0-Lite vs. DeepSeek V4 Flash, MiniMax M2.7, Qwen 3.6 27B, and DeepSeek V4 Pro across 6 agent benchmarks.</figcaption>
     </figure>
 
     <hr class="divider">
@@ -560,23 +558,23 @@
     <!-- Training -->
     <h2 id="training">Model Training</h2>
 
-    <p>This release underwent extensive large-scale and high-complexity mid-training, high-quality synthetic-task SFT, and systematic reinforcement learning optimization. These improvements not only significantly enhance performance on mainstream tasks in Claw environments, but also strengthen the model's generalization ability across different agent harnesses.</p>
+    <p>This release underwent extensive large-scale and high-complexity mid-training, high-quality synthetic-task SFT, and systematic reinforcement learning optimization. These improvements not only significantly enhance performance on mainstream tasks in OpenClaw-like environments, but also strengthen the model's generalization ability across different agent harnesses.</p>
 
     <h3>Environment Construction</h3>
-    <p>SkyClaw is trained on a high-quality and highly complex OpenClaw environment. The training simulation is equipped with frequently used, high-quality tools and skills for the model to explore and utilize. The team analyzed real user tasks in Claw environments, combined with usage statistics and feedback from high-frequency online skills, to construct a relationship graph among tools. Based on this graph, we synthesized complex tasks that more closely resemble real-world user demands.</p>
+    <p>SkyClaw is trained on a high-quality and highly complex OpenClaw environment. The training simulation environment is equipped with frequently used, high-quality tools and skills for the model to explore and utilize. In addition, the team analyzed real user tasks in OpenClaw-like environments, combined with usage statistics and feedback from high-frequency online skills, to construct a relationship graph among tools. Based on this graph, we synthesized complex tasks that more closely resemble real-world user demands.</p>
 
     <h3>High-Quality Mid-Training and SFT</h3>
-    <p>Leveraging a thoroughly validated high-quality Claw environment, we synthesized a large amount of training data tailored for both mid-training and SFT. We established strict data filtering and quality evaluation rules that assess not only final-answer correctness, but also the quality of trajectories throughout the task-solving process. Furthermore, we conducted a series of data-mixture experiments to determine the optimal composition of agent-task training data.</p>
+    <p>Leveraging a thoroughly validated high-quality OpenClaw environment, we synthesized a large amount of training data tailored for both mid-training and SFT. We also established strict data filtering and quality evaluation rules that assess not only final-answer correctness, but also the quality of trajectories throughout the task-solving process. Furthermore, we conducted a series of data-mixture experiments to determine the optimal composition of agent-task training data.</p>
 
     <h3>Reinforcement Learning (RL)</h3>
-    <p>Our self-built Claw environment naturally supports exploration and reinforcement learning. End-to-end agentic RL training further improves the model's generalization ability and stability on general-purpose agent tasks.</p>
+    <p>Our self-built OpenClaw environment naturally supports exploration and reinforcement learning. End-to-end agentic RL training further improves the model's generalization ability and stability on general-purpose agent tasks.</p>
 
     <hr class="divider">
 
     <!-- Pricing -->
     <h2 id="pricing">Pricing and Availability</h2>
 
-    <p>SkyClaw-1.0 offers exceptional cost efficiency — pricing is only half or even lower compared to Minimax 2.7 and the Qwen 3.6 series models. A free trial is now available.</p>
+    <p>SkyClaw-v1.0 offers exceptional cost efficiency — pricing is only half or even lower compared to Minimax 2.7 and the Qwen 3.6 series models. A free trial is now available.</p>
 
     <div class="pricing-wrapper">
         <table class="pricing-table">
@@ -641,11 +639,11 @@
     <!-- Showcase -->
     <h2 id="demos">Showcase</h2>
 
-    <p>Below are examples of tasks completed entirely by SkyClaw-1.0 in a single session. Each was generated from a single natural-language prompt, demonstrating the model's ability to deliver complete, polished results across diverse domains.</p>
+    <p>Below are examples of tasks completed entirely by SkyClaw-v1.0 in a single session. Each was generated from a single natural-language prompt, demonstrating the model's ability to deliver complete, polished results across diverse domains.</p>
 
     <!-- Part 1: Interactive Web & Games -->
     <h3>Interactive Web & Games</h3>
-    <p>SkyClaw-1.0 excels at generating fully functional interactive web applications — from physics simulations to complete game logic — with correct rendering, smooth animations, and proper user interaction handling.</p>
+    <p>SkyClaw-v1.0 excels at generating fully functional interactive web applications — from physics simulations to complete game logic — with correct rendering, smooth animations, and proper user interaction handling.</p>
 
     <div class="demo-embed">
         <div class="embed-header">
@@ -676,7 +674,7 @@
 
     <!-- Part 2: Deep Research & Data Visualization -->
     <h3>Deep Research & Data Visualization</h3>
-    <p>Beyond coding, SkyClaw-1.0 can autonomously research real-world topics, collect data from multiple sources, and synthesize findings into interactive, publication-quality dashboards and reports.</p>
+    <p>Beyond coding, SkyClaw-v1.0 can autonomously research real-world topics, collect data from multiple sources, and synthesize findings into interactive, publication-quality dashboards and reports.</p>
 
     <div class="demo-embed tall">
         <div class="embed-header">

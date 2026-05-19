@@ -1,0 +1,19 @@
+Features
+
+SkyClaw-v1.0 is a high-performance model designed for mainstream agent environments such as OpenClaw, Hermes, and Nanobot. The model is deeply optimized for OpenClaw-related tasks and demonstrates strong capabilities in complex tool usage, multi-turn agent interactions, and real-world task execution. At the same time, SkyClaw-v1.0 offers exceptional cost efficiency, with pricing significantly lower than current mainstream agent models.
+- SkyClaw-v1.0 outperforms Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 35B A3B / 27B models.
+- On OpenClaw-related tasks, its performance approaches that of much larger closed-source models, including DeepSeek V4 Pro, Claude Opus 4.6, and Qwen 3.6 Plus.
+- This release underwent extensive large-scale and high-complexity mid-training, high-quality synthetic-task SFT, and systematic reinforcement learning optimization. These improvements not only significantly enhance performance on mainstream tasks in OpenClaw-like environments, but also strengthen the model’s generalization ability across different agent harnesses.
+- Pricing is only half — or even lower — compared to Minimax 2.7 and the Qwen 3.6 series models.
+In addition to SkyClaw-v1.0, we also offer SkyClaw-v1.0-lite, a much faster and cheaper model that inherits strong agentic performance (e.g., better performance compared to Minimax 2.7). This model is suitable for basic agentic tasks that are more sensitive to costs.  
+
+Model Training
+- Environment Construction:
+SkyClaw is trained on a high-quality and highly complex OpenClaw environment. The training simulation environment is equipped with frequently used, high-quality tools and skills for the model to explore and utilize. In addition, the team analyzed real user tasks in OpenClaw-like environments, combined with usage statistics and feedback from high-frequency online skills, to construct a relationship graph among tools. Based on this graph, we synthesized complex tasks that more closely resemble real-world user demands.
+- High-Quality Mid-Training and SFT:
+Leveraging a thoroughly validated high-quality OpenClaw environment, we synthesized a large amount of training data tailored for both mid-training and SFT. We also established strict data filtering and quality evaluation rules that assess not only final-answer correctness, but also the quality of trajectories throughout the task-solving process. Furthermore, we conducted a series of data-mixture experiments to determine the optimal composition of agent-task training data.
+- Reinforcement Learning (RL):
+Our self-built OpenClaw environment naturally supports exploration and reinforcement learning. End-to-end agentic RL training further improves the model’s generalization ability and stability on general-purpose agent tasks.
+Strong Performance on Agent Benchmarks
+
+Across mainstream agent benchmarks and our internally developed Claw task evaluations—including PinchBench, Claw-Eval (with the ^3 stability test), and Skywork-Claw-Bench (Skywork’s in-house agent evaluation suite built on the OpenClaw environment)—both the main and lite versions outperform Minimax 2.7, DeepSeek V4 Flash, and the Qwen 3.6 35B A3B and 27B models. Substantial improvements are also observed on related code-task evaluation metrics.
