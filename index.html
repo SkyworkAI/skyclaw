@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyClaw-1.0 — Skywork AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #fff;
+            color: #1a1a2e;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #eee;
+        }
+
+        header .inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #6366f1;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .header-links a {
+            font-size: 0.875rem;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .header-links a:hover {
+            color: #1a1a2e;
+        }
+
+        /* Article layout */
+        .article {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Hero / Title area */
+        .article-header {
+            padding: 72px 0 48px;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 48px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .article-meta .tag {
+            background: #f3f0ff;
+            color: #6366f1;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .article-header h1 {
+            font-size: 2.75rem;
+            font-weight: 750;
+            letter-spacing: -1.5px;
+            line-height: 1.2;
+            color: #111;
+            margin-bottom: 20px;
+        }
+
+        .article-header .lead {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.75;
+        }
+
+        /* Content sections */
+        .article h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin: 56px 0 20px;
+            color: #111;
+        }
+
+        .article h3 {
+            font-size: 1.2rem;
+            font-weight: 650;
+            margin: 36px 0 12px;
+            color: #222;
+        }
+
+        .article p {
+            margin-bottom: 16px;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .article ul, .article ol {
+            margin: 16px 0 24px 20px;
+        }
+
+        .article li {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .article li strong {
+            color: #111;
+        }
+
+        /* Key numbers */
+        .key-numbers {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 36px 0;
+        }
+
+        .key-number {
+            background: #fafafa;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .key-number .value {
+            font-size: 2rem;
+            font-weight: 750;
+            color: #6366f1;
+            letter-spacing: -1px;
+        }
+
+        .key-number .label {
+            font-size: 0.78rem;
+            color: #888;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Benchmark image */
+        .benchmark-figure {
+            margin: 36px 0;
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 32px;
+        }
+
+        .benchmark-figure img {
+            width: 100%;
+            display: block;
+        }
+
+        .benchmark-figure figcaption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 16px;
+        }
+
+        /* Pricing table */
+        .pricing-wrapper {
+            margin: 32px 0;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .pricing-table th {
+            background: #f8f7ff;
+            padding: 14px 16px;
+            text-align: center;
+            font-weight: 600;
+            color: #555;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .pricing-table th:first-child {
+            text-align: left;
+        }
+
+        .pricing-table td {
+            padding: 13px 16px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            color: #444;
+        }
+
+        .pricing-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table .ours {
+            background: #f8f7ff;
+        }
+
+        .pricing-table .ours td:first-child {
+            color: #6366f1;
+        }
+
+        .pricing-table .badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #16a34a;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        /* Demo section */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .demo-item {
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .demo-item:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .demo-item video {
+            width: 100%;
+            display: block;
+            background: #000;
+        }
+
+        .demo-item img.demo-screenshot {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .demo-item .demo-caption {
+            padding: 16px 20px;
+        }
+
+        .demo-item .demo-caption h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+        .demo-item .demo-caption p {
+            font-size: 0.82rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .demo-item .demo-caption a {
+            font-size: 0.82rem;
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .demo-item .demo-caption a:hover {
+            text-decoration: underline;
+        }
+
+        /* Embedded demo */
+        .demo-embed {
+            margin: 32px 0;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .demo-embed .embed-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: #f8f8f8;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .demo-embed .embed-header h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .demo-embed .embed-header a {
+            font-size: 0.78rem;
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .demo-embed .embed-header a:hover {
+            text-decoration: underline;
+        }
+
+        .demo-embed iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+
+        .demo-embed.tall iframe {
+            height: 800px;
+        }
+
+        .demo-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .demo-link-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            padding: 20px;
+            text-decoration: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            display: block;
+        }
+
+        .demo-link-card:hover {
+            border-color: #c7c4ff;
+            box-shadow: 0 2px 12px rgba(99, 102, 241, 0.08);
+        }
+
+        .demo-link-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+        .demo-link-card p {
+            font-size: 0.78rem;
+            color: #888;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .demo-link-card .link-text {
+            font-size: 0.8rem;
+            color: #6366f1;
+            font-weight: 500;
+        }
+
+        /* Callout */
+        .callout {
+            background: #f8f7ff;
+            border-left: 3px solid #6366f1;
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 32px 0;
+        }
+
+        .callout p {
+            color: #444;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            margin: 56px 0;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #eee;
+            padding: 32px 0;
+            margin-top: 72px;
+        }
+
+        footer .inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.82rem;
+            color: #999;
+        }
+
+        footer a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+
+            .key-numbers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-links {
+                grid-template-columns: 1fr;
+            }
+
+            .header-links {
+                display: none;
+            }
+
+            footer .inner {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="inner">
+        <a href="#" class="logo">Skywork <span>AI</span></a>
+        <ul class="header-links">
+            <li><a href="#benchmark">Benchmark</a></li>
+            <li><a href="#training">Training</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#demos">Demos</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="article">
+
+    <!-- Article Header -->
+    <div class="article-header">
+        <div class="article-meta">
+            <span class="tag">Model Release</span>
+            <span>2026-05-19</span>
+        </div>
+        <h1>SkyClaw-1.0: High-Performance Agent Model at Unprecedented Value</h1>
+        <p class="lead">
+            SkyClaw-1.0 is a high-performance model designed for mainstream agent environments such as OpenClaw, Hermes, and Nanobot. Deeply optimized for OpenClaw-related tasks, it demonstrates strong capabilities in complex tool usage, multi-turn agent interactions, and real-world task execution — at pricing significantly lower than current mainstream Agent models.
+        </p>
+    </div>
+
+    <!-- Key Numbers -->
+    <div class="key-numbers">
+        <div class="key-number">
+            <div class="value">87.2</div>
+            <div class="label">PinchBench-v2</div>
+        </div>
+        <div class="key-number">
+            <div class="value">59.7</div>
+            <div class="label">Claw-Eval Pass^3</div>
+        </div>
+        <div class="key-number">
+            <div class="value">74.2</div>
+            <div class="label">Claw-Eval Avg</div>
+        </div>
+        <div class="key-number">
+            <div class="value">62.9</div>
+            <div class="label">Skywork-Claw-Bench</div>
+        </div>
+    </div>
+
+    <p>SkyClaw-1.0 outperforms Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 35B A3B / 27B models across all major agent benchmarks. On Claw-related tasks, its performance approaches that of much larger closed-source models, including DeepSeek V4 Pro, Claude Opus 4.6, and Qwen 3.6 Plus.</p>
+
+    <p>In addition to SkyClaw-1.0, we also offer <strong>SkyClaw-1.0-lite</strong>, a much faster and cheaper model that inherits strong agentic performance (e.g., better performance compared to Minimax 2.7). This model is suitable for basic agentic tasks that are more sensitive to costs.</p>
+
+    <div class="callout">
+        <p>We are launching a free trial period — try SkyClaw-1.0 now. Following the trial, we will progressively open-source each model version.</p>
+    </div>
+
+    <!-- Benchmark -->
+    <h2 id="benchmark">Strong Performance on Agent Benchmarks</h2>
+
+    <p>SkyClaw achieves outstanding results on mainstream agent benchmarks as well as internally constructed Claw task evaluations, including PinchBench-v2, Claw-Eval (including the Pass^3 stability test), Skywork-Claw-Bench (Skywork's internal OpenClaw-based agent evaluation), TAU3-Bench, and Terminal-Bench 2.0.</p>
+
+    <p>Both the standard and Lite versions significantly outperform Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 35B A3B / 27B models. Related code task metrics also show significant improvements.</p>
+
+    <figure class="benchmark-figure">
+        <img src="benchmark_style_chart.png" alt="SkyClaw benchmark results across 6 evaluation suites">
+        <figcaption>SkyClaw-1.0 and SkyClaw-1.0-Lite vs. DeepSeek V4 Flash, MiniMax M2.7, Qwen 3.6 27B, and DeepSeek V4 Pro across 6 agent benchmarks.</figcaption>
+    </figure>
+
+    <hr class="divider">
+
+    <!-- Training -->
+    <h2 id="training">Model Training</h2>
+
+    <p>This release underwent extensive large-scale and high-complexity mid-training, high-quality synthetic-task SFT, and systematic reinforcement learning optimization. These improvements not only significantly enhance performance on mainstream tasks in Claw environments, but also strengthen the model's generalization ability across different agent harnesses.</p>
+
+    <h3>Environment Construction</h3>
+    <p>SkyClaw is trained on a high-quality and highly complex OpenClaw environment. The training simulation is equipped with frequently used, high-quality tools and skills for the model to explore and utilize. The team analyzed real user tasks in Claw environments, combined with usage statistics and feedback from high-frequency online skills, to construct a relationship graph among tools. Based on this graph, we synthesized complex tasks that more closely resemble real-world user demands.</p>
+
+    <h3>High-Quality Mid-Training and SFT</h3>
+    <p>Leveraging a thoroughly validated high-quality Claw environment, we synthesized a large amount of training data tailored for both mid-training and SFT. We established strict data filtering and quality evaluation rules that assess not only final-answer correctness, but also the quality of trajectories throughout the task-solving process. Furthermore, we conducted a series of data-mixture experiments to determine the optimal composition of agent-task training data.</p>
+
+    <h3>Reinforcement Learning (RL)</h3>
+    <p>Our self-built Claw environment naturally supports exploration and reinforcement learning. End-to-end agentic RL training further improves the model's generalization ability and stability on general-purpose agent tasks.</p>
+
+    <hr class="divider">
+
+    <!-- Pricing -->
+    <h2 id="pricing">Pricing and Availability</h2>
+
+    <p>SkyClaw-1.0 offers exceptional cost efficiency — pricing is only half or even lower compared to Minimax 2.7 and the Qwen 3.6 series models. A free trial is now available.</p>
+
+    <div class="pricing-wrapper">
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Input (CNY/M tokens)</th>
+                    <th>Output (CNY/M tokens)</th>
+                    <th>Cache Read (CNY/M tokens)</th>
+                    <th>Cache Write (CNY/M tokens)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="ours">
+                    <td>SkyClaw-v1.0 <span class="badge">Best Value</span></td>
+                    <td>0.5</td>
+                    <td>4</td>
+                    <td>0.2</td>
+                    <td>1.5</td>
+                </tr>
+                <tr class="ours">
+                    <td>SkyClaw-v1.0-lite</td>
+                    <td>0.3</td>
+                    <td>2</td>
+                    <td>0.12</td>
+                    <td>0.9</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek V4-Pro</td>
+                    <td>12</td>
+                    <td>24</td>
+                    <td>0.1</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek V4-Flash</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>0.02</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>MiniMax-M2.7</td>
+                    <td>2.1</td>
+                    <td>8.4</td>
+                    <td>0.42</td>
+                    <td>2.625</td>
+                </tr>
+                <tr>
+                    <td>MiniMax-M2.7-highspeed</td>
+                    <td>4.2</td>
+                    <td>16.8</td>
+                    <td>0.42</td>
+                    <td>2.625</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Showcase -->
+    <h2 id="demos">Showcase</h2>
+
+    <p>Below are examples of tasks completed entirely by SkyClaw-1.0 in a single session. Each was generated from a single natural-language prompt, demonstrating the model's ability to deliver complete, polished results across diverse domains.</p>
+
+    <!-- Part 1: Interactive Web & Games -->
+    <h3>Interactive Web & Games</h3>
+    <p>SkyClaw-1.0 excels at generating fully functional interactive web applications — from physics simulations to complete game logic — with correct rendering, smooth animations, and proper user interaction handling.</p>
+
+    <div class="demo-embed">
+        <div class="embed-header">
+            <h4>Bouncing Balls in Rotating Frame</h4>
+            <a href="https://picture-search.tiangong.cn/skyclaw-demos/bouncing-balls.html" target="_blank">Open fullscreen &rarr;</a>
+        </div>
+        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "写一个不断旋转的正方形木框里面有多个小球在弹跳的网页, 小球的弹跳过程要有重力，碰撞过程要符合物理规律。"</p>
+        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/bouncing-balls.html" loading="lazy" allow="accelerometer"></iframe>
+    </div>
+
+    <div class="demo-embed">
+        <div class="embed-header">
+            <h4>Bingo Match Game</h4>
+            <a href="https://picture-search.tiangong.cn/skyclaw-demos/bingo-match.html" target="_blank">Open fullscreen &rarr;</a>
+        </div>
+        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "写一个宾果消消乐的游戏"</p>
+        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/bingo-match.html" loading="lazy"></iframe>
+    </div>
+
+    <!-- Part 2: Deep Research & Data Visualization -->
+    <h3>Deep Research & Data Visualization</h3>
+    <p>Beyond coding, SkyClaw-1.0 can autonomously research real-world topics, collect data from multiple sources, and synthesize findings into interactive, publication-quality dashboards and reports.</p>
+
+    <div class="demo-embed tall">
+        <div class="embed-header">
+            <h4>China NEV Market Report</h4>
+            <a href="https://picture-search.tiangong.cn/skyclaw-demos/china-nev-market.html" target="_blank">Open fullscreen &rarr;</a>
+        </div>
+        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "collect China's top new energy vehicles market shares and price changes in a webpage."</p>
+        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/china-nev-market.html" loading="lazy"></iframe>
+    </div>
+
+    <div class="demo-embed tall">
+        <div class="embed-header">
+            <h4>Magnificent Seven — Stock Price & Prediction</h4>
+            <a href="https://picture-search.tiangong.cn/skyclaw-demos/mag7_dashboard.html" target="_blank">Open fullscreen &rarr;</a>
+        </div>
+        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create a webpage to show the Magnificent Seven's stock price history and make a prediction on their trends."</p>
+        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/mag7_dashboard.html" loading="lazy"></iframe>
+    </div>
+
+</main>
+
+<footer>
+    <div class="inner">
+        <span>&copy; 2026 Skywork AI</span>
+        <span>Free trial available &middot; Open-source release coming soon</span>
+    </div>
+</footer>
+
+</body>
+</html>
