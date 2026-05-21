@@ -3,20 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyClaw-v1.0 — Skywork AI</title>
+    <meta name="description" content="SkyClaw-v1.0 is a high-performance agent model by Skywork AI with OpenAI-compatible API access, strong benchmark results, and low-cost flagship and lite model options.">
+    <meta property="og:title" content="SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost">
+    <meta property="og:description" content="Try SkyClaw-v1.0 and SkyClaw-v1.0-lite for complex tool use, multi-turn agent workflows, and cost-sensitive production tasks.">
+    <meta property="og:image" content="benchmark_style_chart_1600.png">
+    <meta property="og:type" content="website">
+    <title>SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost</title>
     <style>
+        :root {
+            --ink: #111827;
+            --muted: #5f6675;
+            --soft: #f6f7fb;
+            --line: #e7e9f0;
+            --accent: #4f46e5;
+            --accent-strong: #3730a3;
+            --accent-soft: #eef2ff;
+            --success: #16a34a;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
             background: #fff;
-            color: #1a1a2e;
-            line-height: 1.8;
+            color: var(--ink);
+            line-height: 1.68;
             -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        .text-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: #f1f3f8;
+            border: 1px solid #e4e7ef;
+            border-radius: 4px;
+            padding: 1px 5px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.9em;
         }
 
         /* Header */
@@ -30,7 +73,7 @@
         }
 
         header .inner {
-            max-width: 1100px;
+            max-width: 1160px;
             margin: 0 auto;
             padding: 16px 32px;
             display: flex;
@@ -41,13 +84,12 @@
         .logo {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #1a1a2e;
+            color: var(--ink);
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: #6366f1;
+            color: var(--accent);
         }
 
         .header-links {
@@ -58,27 +100,46 @@
 
         .header-links a {
             font-size: 0.875rem;
-            color: #666;
+            color: var(--muted);
             text-decoration: none;
             transition: color 0.15s;
+            white-space: nowrap;
         }
 
         .header-links a:hover {
-            color: #1a1a2e;
+            color: var(--ink);
+        }
+
+        .header-cta {
+            color: #fff !important;
+            background: var(--accent);
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+
+        .header-cta:hover {
+            background: var(--accent-strong);
         }
 
         /* Article layout */
         .article {
-            max-width: 960px;
+            max-width: 1040px;
             margin: 0 auto;
             padding: 0 32px;
         }
 
         /* Hero / Title area */
         .article-header {
-            padding: 72px 0 48px;
-            border-bottom: 1px solid #f0f0f0;
-            margin-bottom: 48px;
+            padding: 68px 0 36px;
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 36px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
+            gap: 44px;
+            align-items: center;
         }
 
         .article-meta {
@@ -88,45 +149,160 @@
             margin-bottom: 24px;
             font-size: 0.85rem;
             color: #888;
+            flex-wrap: wrap;
         }
 
         .article-meta .tag {
-            background: #f3f0ff;
-            color: #6366f1;
+            background: var(--accent-soft);
+            color: var(--accent);
             padding: 3px 10px;
             border-radius: 4px;
             font-weight: 500;
         }
 
         .article-header h1 {
-            font-size: 2.75rem;
+            font-size: 3.35rem;
             font-weight: 750;
-            letter-spacing: -1.5px;
+            letter-spacing: 0;
             line-height: 1.2;
-            color: #111;
+            color: var(--ink);
             margin-bottom: 20px;
         }
 
         .article-header .lead {
-            font-size: 1.15rem;
-            color: #555;
-            line-height: 1.75;
+            font-size: 1.08rem;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 760px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 28px 0 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 18px;
+            border-radius: 8px;
+            font-size: 0.94rem;
+            font-weight: 650;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: transform 0.15s, border-color 0.15s, background 0.15s;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        .button.primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(79, 70, 229, 0.22);
+        }
+
+        .button.primary:hover {
+            background: var(--accent-strong);
+        }
+
+        .button.secondary {
+            background: #fff;
+            color: var(--accent);
+            border-color: #c7d2fe;
+        }
+
+        .button.ghost {
+            color: var(--ink);
+            border-color: var(--line);
+            background: #fff;
+        }
+
+        .hero-note {
+            color: #7a8190;
+            font-size: 0.9rem;
+        }
+
+        .hero-note a {
+            font-weight: 650;
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f7f8ff 100%);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 18px 50px rgba(17, 24, 39, 0.08);
+        }
+
+        .hero-card .eyebrow {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+
+        .hero-card .hero-stat {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hero-card .hero-stat:last-child {
+            border-bottom: none;
+        }
+
+        .hero-card .hero-stat strong {
+            font-size: 1.65rem;
+            line-height: 1;
+            color: var(--ink);
+        }
+
+        .hero-card .hero-stat span {
+            color: var(--muted);
+            font-size: 0.86rem;
+            text-align: right;
+        }
+
+        .hero-card .hero-link {
+            display: block;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            color: var(--accent);
+            font-size: 0.88rem;
+            font-weight: 650;
+            text-decoration: none;
+        }
+
+        .hero-card .hero-link:hover {
+            text-decoration: underline;
         }
 
         /* Content sections */
         .article h2 {
             font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            letter-spacing: 0;
             margin: 56px 0 20px;
-            color: #111;
+            color: var(--ink);
         }
 
         .article h3 {
             font-size: 1.2rem;
             font-weight: 650;
             margin: 36px 0 12px;
-            color: #222;
+            color: var(--ink);
         }
 
         .article p {
@@ -149,12 +325,52 @@
             color: #111;
         }
 
+        .section-summary {
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 28px 0 8px;
+        }
+
+        .training-card {
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .training-card .step {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 750;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .training-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+
+        .training-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
         /* Key numbers */
         .key-numbers {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1px;
-            background: #e8e8e8;
+            background: var(--line);
             border-radius: 12px;
             overflow: hidden;
             margin: 36px 0;
@@ -169,8 +385,8 @@
         .key-number .value {
             font-size: 2rem;
             font-weight: 750;
-            color: #6366f1;
-            letter-spacing: -1px;
+            color: var(--accent);
+            letter-spacing: 0;
         }
 
         .key-number .label {
@@ -184,10 +400,10 @@
         /* Benchmark image */
         .benchmark-figure {
             margin: 36px 0;
-            background: #fafafa;
-            border: 1px solid #eee;
+            background: var(--soft);
+            border: 1px solid var(--line);
             border-radius: 12px;
-            padding: 32px;
+            padding: 24px;
         }
 
         .benchmark-figure img {
@@ -205,19 +421,21 @@
         /* Pricing table */
         .pricing-wrapper {
             margin: 32px 0;
-            border: 1px solid #e8e8e8;
+            border: 1px solid var(--line);
             border-radius: 12px;
-            overflow: hidden;
+            overflow-x: auto;
+            background: #fff;
         }
 
         .pricing-table {
             width: 100%;
+            min-width: 760px;
             border-collapse: collapse;
             font-size: 0.875rem;
         }
 
         .pricing-table th {
-            background: #f8f7ff;
+            background: var(--accent-soft);
             padding: 14px 16px;
             text-align: center;
             font-weight: 600;
@@ -252,13 +470,22 @@
         }
 
         .pricing-table .ours td:first-child {
-            color: #6366f1;
+            color: var(--accent);
+        }
+
+        .pricing-table a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .pricing-table a:hover {
+            text-decoration: underline;
         }
 
         .pricing-table .badge {
             display: inline-block;
             background: #dcfce7;
-            color: #16a34a;
+            color: var(--success);
             font-size: 0.7rem;
             padding: 2px 6px;
             border-radius: 3px;
@@ -267,160 +494,10 @@
             vertical-align: middle;
         }
 
-        /* Demo section */
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .demo-item {
-            border: 1px solid #e8e8e8;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: box-shadow 0.2s;
-        }
-
-        .demo-item:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .demo-item video {
-            width: 100%;
-            display: block;
-            background: #000;
-        }
-
-        .demo-item img.demo-screenshot {
-            width: 100%;
-            display: block;
-            object-fit: cover;
-        }
-
-        .demo-item .demo-caption {
-            padding: 16px 20px;
-        }
-
-        .demo-item .demo-caption h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #222;
-            margin-bottom: 4px;
-        }
-
-        .demo-item .demo-caption p {
-            font-size: 0.82rem;
-            color: #888;
-            margin-bottom: 8px;
-        }
-
-        .demo-item .demo-caption a {
-            font-size: 0.82rem;
-            color: #6366f1;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .demo-item .demo-caption a:hover {
-            text-decoration: underline;
-        }
-
-        /* Embedded demo */
-        .demo-embed {
-            margin: 32px 0;
-            border: 1px solid #e8e8e8;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .demo-embed .embed-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 20px;
-            background: #f8f8f8;
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        .demo-embed .embed-header h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #222;
-        }
-
-        .demo-embed .embed-header a {
-            font-size: 0.78rem;
-            color: #6366f1;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .demo-embed .embed-header a:hover {
-            text-decoration: underline;
-        }
-
-        .demo-embed iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            display: block;
-        }
-
-        .demo-embed.tall iframe {
-            height: 800px;
-        }
-
-        .demo-video-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .demo-video-card {
-            border: 1px solid #e8e8e8;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: box-shadow 0.2s;
-        }
-
-        .demo-video-card:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .demo-video-card video {
-            width: 100%;
-            display: block;
-            background: #000;
-        }
-
-        .demo-video-card .demo-caption {
-            padding: 16px 20px;
-        }
-
-        .demo-video-card .demo-caption h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #222;
-            margin-bottom: 4px;
-        }
-
-        .demo-video-card .demo-caption p {
-            font-size: 0.82rem;
-            color: #888;
-            margin-bottom: 8px;
-        }
-
-        .demo-video-card .demo-caption a {
-            font-size: 0.82rem;
-            color: #6366f1;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .demo-video-card .demo-caption a:hover {
-            text-decoration: underline;
+        .pricing-note {
+            color: #7a8190;
+            font-size: 0.86rem;
+            margin-top: -18px;
         }
 
         .demo-links {
@@ -462,6 +539,113 @@
             font-size: 0.8rem;
             color: #6366f1;
             font-weight: 500;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 28px 0 44px;
+        }
+
+        .showcase-grid.apps-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .showcase-card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            text-decoration: none;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            height: 100%;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-2px);
+            border-color: #c7d2fe;
+            box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+        }
+
+        .showcase-media {
+            aspect-ratio: 16 / 9;
+            background: var(--soft);
+            overflow: hidden;
+        }
+
+        .showcase-media img,
+        .showcase-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-media.contain img {
+            object-fit: contain;
+            background: #f8fafc;
+        }
+
+        .showcase-body {
+            padding: 16px 18px 18px;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .showcase-body h4 {
+            color: var(--ink);
+            font-size: 0.98rem;
+            margin-bottom: 6px;
+            min-height: 2.4em;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .showcase-body p {
+            color: var(--muted);
+            font-size: 0.84rem;
+            line-height: 1.55;
+            margin-bottom: 12px;
+            min-height: 3.9em;
+        }
+
+        .showcase-body span {
+            color: var(--accent);
+            font-size: 0.84rem;
+            font-weight: 650;
+            margin-top: auto;
+        }
+
+        .apps-grid .showcase-body {
+            min-height: 150px;
+        }
+
+        .code-block {
+            background: #171724;
+            border-radius: 10px;
+            padding: 22px;
+            margin: 24px 0;
+            overflow-x: auto;
+        }
+
+        .code-block p {
+            color: #9ca3af;
+            font-size: 0.78rem;
+            margin: 0 0 12px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        .code-block pre {
+            color: #f3f4f6;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            margin: 0;
+            white-space: pre;
+            font-family: 'SF Mono', 'Fira Code', monospace;
         }
 
         /* Callout */
@@ -509,8 +693,46 @@
             text-decoration: none;
         }
 
+        .footer-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .footer-links a {
+            font-weight: 600;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            header .inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px 20px;
+            }
+
+            .header-links {
+                width: 100%;
+                gap: 18px;
+                overflow-x: auto;
+                padding-bottom: 2px;
+            }
+
+            .article {
+                padding: 0 20px;
+            }
+
+            .article-header {
+                padding: 44px 0 28px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
             .article-header h1 {
                 font-size: 2rem;
             }
@@ -519,22 +741,42 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .demo-grid {
-                grid-template-columns: 1fr;
-            }
-
             .demo-links {
                 grid-template-columns: 1fr;
             }
 
-            .header-links {
-                display: none;
+            .training-grid,
+            .showcase-grid,
+            .showcase-grid.apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benchmark-figure {
+                padding: 14px;
+            }
+
+            .button {
+                width: auto;
+            }
+
+            .hero-actions .button.primary {
+                width: 100%;
+            }
+
+            .hero-actions .button.secondary,
+            .hero-actions .button.ghost {
+                flex: 1 1 0;
+                min-width: 0;
             }
 
             footer .inner {
                 flex-direction: column;
                 gap: 8px;
                 text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
             }
         }
     </style>
@@ -550,6 +792,8 @@
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#api">API</a></li>
             <li><a href="#demos">Demos</a></li>
+            <li><a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1-lite?tab=info" target="_blank" rel="noopener noreferrer">Lite</a></li>
+            <li><a class="header-cta" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" rel="noopener noreferrer">Try API</a></li>
         </ul>
     </div>
 </header>
@@ -558,15 +802,41 @@
 
     <!-- Article Header -->
     <div class="article-header">
-        <div class="article-meta">
-            <span class="tag">Model Release</span>
-            <span>2026-05-19</span>
+        <div class="hero-grid">
+            <div>
+                <div class="article-meta">
+                    <span class="tag">Model Release</span>
+                    <span>2026-05-19</span>
+                    <span>OpenAI-compatible API</span>
+                </div>
+                <h1>SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost</h1>
+                <p class="lead">
+                    A high-performance agent model for complex tool use, multi-turn workflows, and real-world task execution. Use the flagship model for stronger results, or switch to SkyClaw-v1.0-lite when speed and cost matter most.
+                </p>
+                <div class="hero-actions">
+                    <a class="button primary" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" rel="noopener noreferrer">Try SkyClaw-v1.0</a>
+                    <a class="button secondary" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1-lite?tab=info" target="_blank" rel="noopener noreferrer">Try SkyClaw Lite</a>
+                    <a class="button ghost" href="#pricing">Compare Pricing</a>
+                </div>
+                <p class="hero-note">Free trial available now. Need evidence first? <a class="text-link" href="#benchmark">See benchmark results</a>.</p>
+            </div>
+            <aside class="hero-card" aria-label="SkyClaw release highlights">
+                <div class="eyebrow">At a glance</div>
+                <div class="hero-stat">
+                    <strong>0.5</strong>
+                    <span>CNY / M input tokens for flagship</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>0.3</strong>
+                    <span>CNY / M input tokens from lite</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>API</strong>
+                    <span>OpenAI-compatible interface</span>
+                </div>
+                <a class="hero-link" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1-lite?tab=info" target="_blank" rel="noopener noreferrer">Open Lite model page &rarr;</a>
+            </aside>
         </div>
-        <h1>SkyClaw-v1.0: High-Performance Agent Model at Unprecedented Value</h1>
-        <p style="margin-bottom: 24px;"><a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" style="color:#6366f1; text-decoration:none; font-weight:500; font-size:1rem;">Try it on apifree.ai &rarr;</a></p>
-        <p class="lead">
-            SkyClaw-v1.0 is a high-performance model designed for mainstream agent environments such as OpenClaw, Hermes, and Nanobot. Deeply optimized for OpenClaw-related tasks, it demonstrates strong capabilities in complex tool usage, multi-turn agent interactions, and real-world task execution — at pricing significantly lower than current mainstream Agent models.
-        </p>
     </div>
 
     <!-- Key Numbers -->
@@ -594,7 +864,7 @@
     <p>In addition to SkyClaw-v1.0, we also offer <strong>SkyClaw-v1.0-lite</strong>, a much faster and cheaper model that inherits strong agentic performance (e.g., better performance compared to Minimax 2.7). This model is suitable for basic agentic tasks that are more sensitive to costs.</p>
 
     <div class="callout">
-        <p>We are launching a free trial period — <a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" style="color:#6366f1; text-decoration:none; font-weight:500;">try SkyClaw-v1.0 now</a>. Following the trial, we will progressively open-source each model version.</p>
+        <p>We are launching a free trial period — <a class="text-link" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" rel="noopener noreferrer">try SkyClaw-v1.0</a> or <a class="text-link" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1-lite?tab=info" target="_blank" rel="noopener noreferrer">try SkyClaw-v1.0-lite</a>. Following the trial, we will progressively open-source each model version.</p>
     </div>
 
     <!-- Benchmark -->
@@ -603,7 +873,7 @@
     <p>Across mainstream agent benchmarks and our internally developed Claw task evaluations — including PinchBench, Claw-Eval (with the ^3 stability test), and Skywork-Claw-Bench (Skywork's in-house agent evaluation suite built on the OpenClaw environment) — both the main and lite versions outperform Minimax 2.7, DeepSeek V4 Flash, and the Qwen 3.6 35B A3B and 27B models. Substantial improvements are also observed on related code-task evaluation metrics.</p>
 
     <figure class="benchmark-figure">
-        <img src="https://picture-search.tiangong.cn/skyclaw-demos/benchmark_style_chart.v1.0.png?x-oss-process=image/format,png" alt="SkyClaw benchmark results across 6 evaluation suites">
+        <img src="benchmark_style_chart_1600.png" alt="SkyClaw benchmark results across 6 evaluation suites" loading="lazy">
         <figcaption>SkyClaw-v1.0 and SkyClaw-v1.0-Lite vs. DeepSeek V4 Flash, MiniMax M2.7, Qwen 3.6 27B, and DeepSeek V4 Pro across 6 agent benchmarks.</figcaption>
     </figure>
 
@@ -612,16 +882,25 @@
     <!-- Training -->
     <h2 id="training">Model Training</h2>
 
-    <p>This release underwent extensive large-scale and high-complexity mid-training, high-quality synthetic-task SFT, and systematic reinforcement learning optimization. These improvements not only significantly enhance performance on mainstream tasks in OpenClaw-like environments, but also strengthen the model's generalization ability across different agent harnesses.</p>
+    <p class="section-summary">SkyClaw-v1.0 was trained around practical agent behavior: complex tool environments, filtered synthetic trajectories, and end-to-end reinforcement learning for more stable multi-step execution.</p>
 
-    <h3>Environment Construction</h3>
-    <p>SkyClaw is trained on a high-quality and highly complex OpenClaw environment. The training simulation environment is equipped with frequently used, high-quality tools and skills for the model to explore and utilize. In addition, the team analyzed real user tasks in OpenClaw-like environments, combined with usage statistics and feedback from high-frequency online skills, to construct a relationship graph among tools. Based on this graph, we synthesized complex tasks that more closely resemble real-world user demands.</p>
-
-    <h3>High-Quality Mid-Training and SFT</h3>
-    <p>Leveraging a thoroughly validated high-quality OpenClaw environment, we synthesized a large amount of training data tailored for both mid-training and SFT. We also established strict data filtering and quality evaluation rules that assess not only final-answer correctness, but also the quality of trajectories throughout the task-solving process. Furthermore, we conducted a series of data-mixture experiments to determine the optimal composition of agent-task training data.</p>
-
-    <h3>Reinforcement Learning (RL)</h3>
-    <p>Our self-built OpenClaw environment naturally supports exploration and reinforcement learning. End-to-end agentic RL training further improves the model's generalization ability and stability on general-purpose agent tasks.</p>
+    <div class="training-grid">
+        <div class="training-card">
+            <div class="step">01</div>
+            <h3>Agent Environment</h3>
+            <p>Training tasks were built from OpenClaw-style workflows with realistic tool relationships and multi-step user demands.</p>
+        </div>
+        <div class="training-card">
+            <div class="step">02</div>
+            <h3>Synthetic SFT Data</h3>
+            <p>High-quality task trajectories were filtered for both final-answer correctness and the quality of intermediate actions.</p>
+        </div>
+        <div class="training-card">
+            <div class="step">03</div>
+            <h3>Agentic RL</h3>
+            <p>End-to-end reinforcement learning improves generalization, stability, and robustness across agent harnesses.</p>
+        </div>
+    </div>
 
     <hr class="divider">
 
@@ -643,14 +922,14 @@
             </thead>
             <tbody>
                 <tr class="ours">
-                    <td>SkyClaw-v1.0 <span class="badge">Best Value</span></td>
+                    <td><a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" rel="noopener noreferrer">SkyClaw-v1.0</a> <span class="badge">Best Value</span></td>
                     <td>0.5</td>
                     <td>4</td>
                     <td>0.2</td>
                     <td>1.5</td>
                 </tr>
                 <tr class="ours">
-                    <td>SkyClaw-v1.0-lite</td>
+                    <td><a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1-lite?tab=info" target="_blank" rel="noopener noreferrer">SkyClaw-v1.0-lite</a></td>
                     <td>0.3</td>
                     <td>2</td>
                     <td>0.12</td>
@@ -687,17 +966,18 @@
             </tbody>
         </table>
     </div>
+    <p class="pricing-note">Tip: choose SkyClaw-v1.0 for stronger agent performance; choose SkyClaw-v1.0-lite for higher-throughput, cost-sensitive workflows.</p>
 
     <hr class="divider">
 
     <!-- API Usage -->
     <h2 id="api">API Usage</h2>
 
-    <p>SkyClaw-v1.0 is available via <a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" style="color:#6366f1; text-decoration:none; font-weight:500;">apifree.ai</a> with an OpenAI-compatible API interface. Get started in minutes:</p>
+    <p>SkyClaw-v1.0 is available via <a class="text-link" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" rel="noopener noreferrer">apifree.ai</a> with an OpenAI-compatible API interface. The lighter model is available from the <a class="text-link" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1-lite?tab=info" target="_blank" rel="noopener noreferrer">SkyClaw-v1.0-lite page</a>. Get started in minutes:</p>
 
-    <div style="background:#1e1e2e; border-radius:10px; padding:24px; margin:24px 0; overflow-x:auto;">
-        <p style="color:#888; font-size:0.78rem; margin:0 0 12px; font-family:monospace;">cURL</p>
-<pre style="color:#e4e4ef; font-size:0.82rem; line-height:1.6; margin:0; white-space:pre; font-family:'SF Mono','Fira Code',monospace;">curl https://api.apifree.ai/v1/chat/completions \
+    <div class="code-block">
+        <p>cURL</p>
+<pre>curl https://api.apifree.ai/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $APIFREE_API_KEY" \
   -d '{
@@ -708,9 +988,9 @@
   }'</pre>
     </div>
 
-    <div style="background:#1e1e2e; border-radius:10px; padding:24px; margin:24px 0; overflow-x:auto;">
-        <p style="color:#888; font-size:0.78rem; margin:0 0 12px; font-family:monospace;">Python (OpenAI SDK)</p>
-<pre style="color:#e4e4ef; font-size:0.82rem; line-height:1.6; margin:0; white-space:pre; font-family:'SF Mono','Fira Code',monospace;">from openai import OpenAI
+    <div class="code-block">
+        <p>Python (OpenAI SDK)</p>
+<pre>from openai import OpenAI
 
 client = OpenAI(
     api_key="your-api-key",
@@ -725,141 +1005,164 @@ response = client.chat.completions.create(
 )
 print(response.choices[0].message.content)</pre>
     </div>
+    <p class="pricing-note">To call SkyClaw-v1.0-lite, use <code>skywork-ai/skyclaw-v1-lite</code> as the model name.</p>
 
-    <p>For full documentation, authentication setup, and advanced usage (tool calling, multi-turn conversations, streaming), visit the <a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" style="color:#6366f1; text-decoration:none; font-weight:500;">SkyClaw API page on apifree.ai &rarr;</a></p>
+    <p>For full documentation, authentication setup, and advanced usage (tool calling, multi-turn conversations, streaming), visit the <a class="text-link" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" rel="noopener noreferrer">SkyClaw API page on apifree.ai &rarr;</a></p>
 
     <hr class="divider">
 
     <!-- Showcase -->
     <h2 id="demos">Showcase</h2>
 
-    <p>Below are examples of tasks completed entirely by SkyClaw-v1.0 in a single session. Each was generated from a single natural-language prompt, demonstrating the model's ability to deliver complete, polished results across diverse domains.</p>
+    <p>These examples start from natural-language prompts and are completed inside agent frameworks such as <a class="text-link" href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener noreferrer">Hermes</a>, <a class="text-link" href="https://github.com/anthropics/claude-code-action" target="_blank" rel="noopener noreferrer">Claude Code</a>, and <a class="text-link" href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer">Codex</a>. We strongly recommend using SkyClaw-v1.0 as the model inside an agent workflow rather than as a standalone chat model.</p>
 
-    <!-- Part 1: Interactive Web & Games -->
-    <h3>Interactive Web & Games</h3>
+    <div class="demo-links">
+        <a class="demo-link-card" href="#app-demos">
+            <h4>Application UI</h4>
+            <p>Production-style layouts with realistic navigation flows.</p>
+            <span class="link-text">Jump to demos &rarr;</span>
+        </a>
+        <a class="demo-link-card" href="#interactive-demos">
+            <h4>Interactive Web &amp; Games</h4>
+            <p>Playable interfaces, physics simulations, and game logic.</p>
+            <span class="link-text">Jump to demos &rarr;</span>
+        </a>
+        <a class="demo-link-card" href="#research-demos">
+            <h4>Research Dashboards</h4>
+            <p>Data collection, market reports, and visual analysis.</p>
+            <span class="link-text">Jump to demos &rarr;</span>
+        </a>
+    </div>
+
+    <!-- Part 1: Apps -->
+    <h3 id="app-demos">Apps</h3>
+    <p>For app-building tasks, we recommend running SkyClaw-v1.0 inside agent frameworks like <a class="text-link" href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener noreferrer">Hermes</a>, <a class="text-link" href="https://github.com/anthropics/claude-code-action" target="_blank" rel="noopener noreferrer">Claude Code</a>, or <a class="text-link" href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer">Codex</a> so it can plan, edit files, test, and iterate through the full workflow.</p>
+
+    <div class="showcase-grid apps-grid">
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/flight_travel_en/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="flight_travel_preview.png" alt="Rendered preview of the flight and travel booking app" loading="lazy">
+            </div>
+            <div class="showcase-body">
+                <h4>Flight &amp; Travel Booking App</h4>
+                <p>Search, result browsing, booking, and itinerary planning views.</p>
+                <span>Open demo &rarr;</span>
+            </div>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/instagram/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="instagram_preview.png" alt="Rendered preview of the Instagram-style social app" loading="lazy">
+            </div>
+            <div class="showcase-body">
+                <h4>Instagram-style Social App</h4>
+                <p>Feed, stories, profile, and social interaction surfaces.</p>
+                <span>Open demo &rarr;</span>
+            </div>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/xiaohongshu.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="xiaohongshu_preview.png" alt="Rendered preview of the Xiaohongshu-style app" loading="lazy">
+            </div>
+            <div class="showcase-body">
+                <h4>Xiaohongshu-style App</h4>
+                <p>Mobile social commerce feed with discovery tabs, cards, and lifestyle content.</p>
+                <span>Open demo &rarr;</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Part 2: Interactive Web & Games -->
+    <h3 id="interactive-demos">Interactive Web &amp; Games</h3>
     <p>SkyClaw-v1.0 excels at generating fully functional interactive web applications — from physics simulations to complete game logic — with correct rendering, smooth animations, and proper user interaction handling.</p>
 
-    <div class="demo-embed">
-        <div class="embed-header">
-            <h4>Bouncing Balls in Rotating Frame</h4>
-            <a href="https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html" target="_blank">Open fullscreen &rarr;</a>
-        </div>
-        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "Create a webpage with a continuously rotating square wooden frame containing multiple balls bouncing inside. The balls should follow physic laws."</p>
-        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html" loading="lazy" allow="accelerometer"></iframe>
-    </div>
-
-    <div class="demo-embed">
-        <div class="embed-header">
-            <h4>Bingo Match Game</h4>
-            <a href="https://picture-search.tiangong.cn/skyclaw-demos/bingo.html" target="_blank">Open fullscreen &rarr;</a>
-        </div>
-        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create a bingo match game for kids"</p>
-        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/bingo.html" loading="lazy"></iframe>
-    </div>
-
-    <div class="demo-embed">
-        <div class="embed-header">
-            <h4>Chess Game</h4>
-            <a href="https://picture-search.tiangong.cn/skyclaw-demos/chess.html" target="_blank">Open fullscreen &rarr;</a>
-        </div>
-        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create a chess game webpage with human vs computer players"</p>
-        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/chess.html" loading="lazy"></iframe>
-    </div>
-
-    <div class="demo-video-grid">
-        <div class="demo-video-card">
-            <video controls muted playsinline preload="metadata" poster="https://picture-search.tiangong.cn/skyclaw-demos/2048.mp4?x-oss-process=video/snapshot,t_0,f_jpg">
-                <source src="https://picture-search.tiangong.cn/skyclaw-demos/2048.mp4" type="video/mp4">
-            </video>
-            <div class="demo-caption">
-                <h4>2048</h4>
-                <p>Prompt: "create a 2048 puzzle game webpage"</p>
-                <a href="https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html" target="_blank">Try Live Demo &rarr;</a>
+    <div class="showcase-grid">
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="bouncing_balls_preview.png" alt="Bouncing balls in a rotating wooden frame demo" loading="lazy">
             </div>
-        </div>
-        <div class="demo-video-card">
-            <video controls muted playsinline preload="metadata" poster="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle.mp4?x-oss-process=video/snapshot,t_0,f_jpg">
-                <source src="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle.mp4" type="video/mp4">
-            </video>
-            <div class="demo-caption">
-                <h4>Airplane Battle</h4>
-                <p>Prompt: "create an airplane battle shooting game"</p>
-                <a href="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html" target="_blank">Try Live Demo &rarr;</a>
+            <div class="showcase-body">
+                <h4>Bouncing Balls in Rotating Frame</h4>
+                <p>Physics simulation generated from one natural-language prompt.</p>
+                <span>Open fullscreen &rarr;</span>
             </div>
-        </div>
-        <div class="demo-video-card">
-            <video controls muted playsinline preload="metadata" poster="https://picture-search.tiangong.cn/skyclaw-demos/tetris.mp4?x-oss-process=video/snapshot,t_0,f_jpg">
-                <source src="https://picture-search.tiangong.cn/skyclaw-demos/tetris.mp4" type="video/mp4">
-            </video>
-            <div class="demo-caption">
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/bingo.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media contain">
+                <img src="bingo_blast_preview.png" alt="Bingo match game demo" loading="lazy">
+            </div>
+            <div class="showcase-body">
+                <h4>Bingo Match Game</h4>
+                <p>Kid-friendly game UI with complete interaction flow.</p>
+                <span>Open fullscreen &rarr;</span>
+            </div>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="https://picture-search.tiangong.cn/skyclaw-demos/2048.mp4?x-oss-process=video/snapshot,t_0,f_jpg" alt="2048 puzzle game demo" loading="lazy">
+            </div>
+            <div class="showcase-body">
+                <h4>2048 Puzzle Game</h4>
+                <p>Playable puzzle game with scoring, tile movement, and responsive layout.</p>
+                <span>Try live demo &rarr;</span>
+            </div>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="https://picture-search.tiangong.cn/skyclaw-demos/tetris.mp4?x-oss-process=video/snapshot,t_0,f_jpg" alt="Tetris game demo" loading="lazy">
+            </div>
+            <div class="showcase-body">
                 <h4>Tetris</h4>
-                <p>Prompt: "create a Tetris game webpage"</p>
-                <a href="https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html" target="_blank">Try Live Demo &rarr;</a>
+                <p>Complete game mechanics with falling blocks, rows, and scoring.</p>
+                <span>Try live demo &rarr;</span>
             </div>
-        </div>
-        <div class="demo-video-card">
-            <video controls muted playsinline preload="metadata" poster="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem.mp4?x-oss-process=video/snapshot,t_0,f_jpg">
-                <source src="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem.mp4" type="video/mp4">
-            </video>
-            <div class="demo-caption">
-                <h4>Texas Hold'em Poker</h4>
-                <p>Prompt: "create a Texas Hold'em poker game"</p>
-                <a href="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem/index.html" target="_blank">Try Live Demo &rarr;</a>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/mario_game.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="super_mario_preview.png" alt="Rendered preview of the Super Mario platform game demo" loading="lazy">
             </div>
-        </div>
+            <div class="showcase-body">
+                <h4>Super Mario Platform Game</h4>
+                <p>Side-scrolling platform demo with keyboard controls and game-state handling.</p>
+                <span>Try live demo &rarr;</span>
+            </div>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="financial_terminal_preview.png" alt="Rendered preview of the financial terminal app" loading="lazy">
+            </div>
+            <div class="showcase-body">
+                <h4>Financial Terminal (CN)</h4>
+                <p>Interactive market terminal with charts, stock lists, keyboard cues, and news layout.</p>
+                <span>Open demo &rarr;</span>
+            </div>
+        </a>
     </div>
 
-    <!-- Part 2: Deep Research & Data Visualization -->
-    <h3>Deep Research & Data Visualization</h3>
+    <!-- Part 3: Deep Research & Data Visualization -->
+    <h3 id="research-demos">Deep Research &amp; Data Visualization</h3>
     <p>Beyond coding, SkyClaw-v1.0 can autonomously research real-world topics, collect data from multiple sources, and synthesize findings into interactive, publication-quality dashboards and reports.</p>
 
-    <div class="demo-embed tall">
-        <div class="embed-header">
-            <h4>China NEV Market Report</h4>
-            <a href="https://picture-search.tiangong.cn/skyclaw-demos/china-nev-market.html" target="_blank">Open fullscreen &rarr;</a>
-        </div>
-        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "collect China's top new energy vehicles market shares and price changes in a webpage."</p>
-        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/china-nev-market.html" loading="lazy"></iframe>
-    </div>
-
-    <div class="demo-embed tall">
-        <div class="embed-header">
-            <h4>Magnificent Seven — Stock Price & Prediction</h4>
-            <a href="https://picture-search.tiangong.cn/skyclaw-demos/mag7_dashboard.html" target="_blank">Open fullscreen &rarr;</a>
-        </div>
-        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create a webpage to show the Magnificent Seven's stock price history and make a prediction on their trends."</p>
-        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/mag7_dashboard.html" loading="lazy"></iframe>
-    </div>
-
-    <div class="demo-embed tall">
-        <div class="embed-header">
-            <h4>金融终端 — Financial Terminal (CN)</h4>
-            <a href="https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html" target="_blank">Open fullscreen &rarr;</a>
-        </div>
-        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "创建一个金融终端网页，展示实时行情、K 线走势、热门股票与市场资讯。"</p>
-        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html" loading="lazy"></iframe>
-    </div>
-
-    <!-- Part 3: Apps -->
-    <h3>Apps</h3>
-    <p>SkyClaw-v1.0 can also generate complete, production-style application interfaces — combining realistic layouts, navigation flows, and rich interactive components in a single prompt.</p>
-
-    <div class="demo-embed tall">
-        <div class="embed-header">
-            <h4>Flight & Travel Booking App</h4>
-            <a href="https://picture-search.tiangong.cn/skyclaw-demos/flight_travel_en/index.html" target="_blank">Open fullscreen &rarr;</a>
-        </div>
-        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create a flight booking and travel planning app webpage with search, results, and itinerary views."</p>
-        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/flight_travel_en/index.html" loading="lazy"></iframe>
-    </div>
-
-    <div class="demo-embed tall">
-        <div class="embed-header">
-            <h4>Instagram-style Social App</h4>
-            <a href="https://picture-search.tiangong.cn/skyclaw-demos/instagram/index.html" target="_blank">Open fullscreen &rarr;</a>
-        </div>
-        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create an Instagram-style social media app webpage with feed, stories, and profile."</p>
-        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/instagram/index.html" loading="lazy"></iframe>
+    <div class="showcase-grid">
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/china-nev-market.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="china_nev_report_preview.png" alt="China NEV market report dashboard" loading="lazy">
+            </div>
+            <div class="showcase-body">
+                <h4>China NEV Market Report</h4>
+                <p>Market share and pricing analysis synthesized into a dashboard.</p>
+                <span>Open report &rarr;</span>
+            </div>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/mag7_dashboard.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <img src="mag7_report_preview.png" alt="Magnificent Seven stock dashboard" loading="lazy">
+            </div>
+            <div class="showcase-body">
+                <h4>Magnificent Seven Stock Dashboard</h4>
+                <p>Historical stock price analysis with visual prediction narrative.</p>
+                <span>Open dashboard &rarr;</span>
+            </div>
+        </a>
     </div>
 
 </main>
@@ -867,7 +1170,10 @@ print(response.choices[0].message.content)</pre>
 <footer>
     <div class="inner">
         <span>&copy; 2026 Skywork AI</span>
-        <span>Free trial available &middot; Open-source release coming soon</span>
+        <div class="footer-links">
+            <a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" rel="noopener noreferrer">Try SkyClaw-v1.0</a>
+            <a href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1-lite?tab=info" target="_blank" rel="noopener noreferrer">Try Lite</a>
+        </div>
     </div>
 </footer>
 
