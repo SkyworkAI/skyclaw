@@ -371,6 +371,58 @@
             height: 800px;
         }
 
+        .demo-video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .demo-video-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .demo-video-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .demo-video-card video {
+            width: 100%;
+            display: block;
+            background: #000;
+        }
+
+        .demo-video-card .demo-caption {
+            padding: 16px 20px;
+        }
+
+        .demo-video-card .demo-caption h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+        .demo-video-card .demo-caption p {
+            font-size: 0.82rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .demo-video-card .demo-caption a {
+            font-size: 0.82rem;
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .demo-video-card .demo-caption a:hover {
+            text-decoration: underline;
+        }
+
         .demo-links {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -714,6 +766,49 @@ print(response.choices[0].message.content)</pre>
         <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/chess.html" loading="lazy"></iframe>
     </div>
 
+    <div class="demo-video-grid">
+        <div class="demo-video-card">
+            <video controls muted playsinline preload="metadata" poster="https://picture-search.tiangong.cn/skyclaw-demos/2048.mp4?x-oss-process=video/snapshot,t_0,f_jpg">
+                <source src="https://picture-search.tiangong.cn/skyclaw-demos/2048.mp4" type="video/mp4">
+            </video>
+            <div class="demo-caption">
+                <h4>2048</h4>
+                <p>Prompt: "create a 2048 puzzle game webpage"</p>
+                <a href="https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html" target="_blank">Try Live Demo &rarr;</a>
+            </div>
+        </div>
+        <div class="demo-video-card">
+            <video controls muted playsinline preload="metadata" poster="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle.mp4?x-oss-process=video/snapshot,t_0,f_jpg">
+                <source src="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle.mp4" type="video/mp4">
+            </video>
+            <div class="demo-caption">
+                <h4>Airplane Battle</h4>
+                <p>Prompt: "create an airplane battle shooting game"</p>
+                <a href="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html" target="_blank">Try Live Demo &rarr;</a>
+            </div>
+        </div>
+        <div class="demo-video-card">
+            <video controls muted playsinline preload="metadata" poster="https://picture-search.tiangong.cn/skyclaw-demos/tetris.mp4?x-oss-process=video/snapshot,t_0,f_jpg">
+                <source src="https://picture-search.tiangong.cn/skyclaw-demos/tetris.mp4" type="video/mp4">
+            </video>
+            <div class="demo-caption">
+                <h4>Tetris</h4>
+                <p>Prompt: "create a Tetris game webpage"</p>
+                <a href="https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html" target="_blank">Try Live Demo &rarr;</a>
+            </div>
+        </div>
+        <div class="demo-video-card">
+            <video controls muted playsinline preload="metadata" poster="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem.mp4?x-oss-process=video/snapshot,t_0,f_jpg">
+                <source src="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem.mp4" type="video/mp4">
+            </video>
+            <div class="demo-caption">
+                <h4>Texas Hold'em Poker</h4>
+                <p>Prompt: "create a Texas Hold'em poker game"</p>
+                <a href="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem/index.html" target="_blank">Try Live Demo &rarr;</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Part 2: Deep Research & Data Visualization -->
     <h3>Deep Research & Data Visualization</h3>
     <p>Beyond coding, SkyClaw-v1.0 can autonomously research real-world topics, collect data from multiple sources, and synthesize findings into interactive, publication-quality dashboards and reports.</p>
@@ -734,6 +829,37 @@ print(response.choices[0].message.content)</pre>
         </div>
         <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create a webpage to show the Magnificent Seven's stock price history and make a prediction on their trends."</p>
         <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/mag7_dashboard.html" loading="lazy"></iframe>
+    </div>
+
+    <div class="demo-embed tall">
+        <div class="embed-header">
+            <h4>金融终端 — Financial Terminal (CN)</h4>
+            <a href="https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html" target="_blank">Open fullscreen &rarr;</a>
+        </div>
+        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "创建一个金融终端网页，展示实时行情、K 线走势、热门股票与市场资讯。"</p>
+        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html" loading="lazy"></iframe>
+    </div>
+
+    <!-- Part 3: Apps -->
+    <h3>Apps</h3>
+    <p>SkyClaw-v1.0 can also generate complete, production-style application interfaces — combining realistic layouts, navigation flows, and rich interactive components in a single prompt.</p>
+
+    <div class="demo-embed tall">
+        <div class="embed-header">
+            <h4>Flight & Travel Booking App</h4>
+            <a href="https://picture-search.tiangong.cn/skyclaw-demos/flight_travel_en/index.html" target="_blank">Open fullscreen &rarr;</a>
+        </div>
+        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create a flight booking and travel planning app webpage with search, results, and itinerary views."</p>
+        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/flight_travel_en/index.html" loading="lazy"></iframe>
+    </div>
+
+    <div class="demo-embed tall">
+        <div class="embed-header">
+            <h4>Instagram-style Social App</h4>
+            <a href="https://picture-search.tiangong.cn/skyclaw-demos/instagram/index.html" target="_blank">Open fullscreen &rarr;</a>
+        </div>
+        <p style="padding: 12px 20px 0; margin:0; font-size:0.82rem; color:#888;">Prompt: "create an Instagram-style social media app webpage with feed, stories, and profile."</p>
+        <iframe src="https://picture-search.tiangong.cn/skyclaw-demos/instagram/index.html" loading="lazy"></iframe>
     </div>
 
 </main>
