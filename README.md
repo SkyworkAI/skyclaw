@@ -30,9 +30,9 @@ Animated showcase assets used by the page:
 | Bouncing Balls in Rotating Frame | `bouncing_balls_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html> |
 | Bingo Match Game | `bingo_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/bingo.html> |
 | 2048 Puzzle Game | `2048_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html> |
-| Tetris | `tetris.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html> |
+| Tetris | `tetris_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html> |
 | Super Mario Platform Game | `super_mario_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/mario_game.html> |
-| Airplane Battle | `airplane_battle.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html> |
+| Airplane Battle | `airplane_battle_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html> |
 | Chess Game | `chess_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/chess.html> |
 | Texas Hold'em Poker | `texas_holdem_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem/index.html> |
 | Financial Terminal (CN) | `financial_terminal_preview.mp4` | <https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html> |
@@ -64,7 +64,7 @@ http://localhost:8000/
 Current generated preview assets:
 
 - `2048_preview.mp4`
-- `airplane_battle.mp4`
+- `airplane_battle_preview.mp4`
 - `bingo_preview.mp4`
 - `bouncing_balls_preview.mp4`
 - `chess_preview.mp4`
@@ -76,7 +76,7 @@ Current generated preview assets:
 - `instagram_preview_crop.png`
 - `mag7_report_preview.png`
 - `super_mario_preview.mp4`
-- `tetris.mp4`
+- `tetris_preview.mp4`
 - `texas_holdem_preview.mp4`
 - `xiaohongshu_preview.png`
 - `xiaohongshu_preview_crop.png`
