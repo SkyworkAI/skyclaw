@@ -258,7 +258,7 @@
             border-bottom: 1px solid var(--line);
         }
 
-        .hero-card .hero-stat:last-child {
+        .hero-card .hero-stat:last-of-type {
             border-bottom: none;
         }
 
@@ -589,6 +589,16 @@
             background: #f8fafc;
         }
 
+        .showcase-media.phone-preview img {
+            object-fit: cover;
+            object-position: top center;
+            background: #eef0f4;
+        }
+
+        .apps-grid .showcase-media {
+            aspect-ratio: 4 / 5;
+        }
+
         .showcase-body {
             padding: 16px 18px 18px;
             min-height: 140px;
@@ -823,12 +833,16 @@
             <aside class="hero-card" aria-label="SkyClaw release highlights">
                 <div class="eyebrow">At a glance</div>
                 <div class="hero-stat">
+                    <strong>1M</strong>
+                    <span>token context for long agent workflows</span>
+                </div>
+                <div class="hero-stat">
                     <strong>0.5</strong>
                     <span>CNY / M input tokens for flagship</span>
                 </div>
                 <div class="hero-stat">
                     <strong>0.3</strong>
-                    <span>CNY / M input tokens from lite</span>
+                    <span>CNY / M input tokens for lite</span>
                 </div>
                 <div class="hero-stat">
                     <strong>API</strong>
@@ -1040,8 +1054,8 @@ print(response.choices[0].message.content)</pre>
 
     <div class="showcase-grid apps-grid">
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/flight_travel_en/index.html" target="_blank" rel="noopener noreferrer">
-            <div class="showcase-media">
-                <img src="flight_travel_preview.png" alt="Rendered preview of the flight and travel booking app" loading="lazy">
+            <div class="showcase-media phone-preview">
+                <img src="flight_travel_preview_crop.png" alt="Rendered preview of the flight and travel booking app" loading="lazy">
             </div>
             <div class="showcase-body">
                 <h4>Flight &amp; Travel Booking App</h4>
@@ -1050,8 +1064,8 @@ print(response.choices[0].message.content)</pre>
             </div>
         </a>
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/instagram/index.html" target="_blank" rel="noopener noreferrer">
-            <div class="showcase-media">
-                <img src="instagram_preview.png" alt="Rendered preview of the Instagram-style social app" loading="lazy">
+            <div class="showcase-media phone-preview">
+                <img src="instagram_preview_crop.png" alt="Rendered preview of the Instagram-style social app" loading="lazy">
             </div>
             <div class="showcase-body">
                 <h4>Instagram-style Social App</h4>
@@ -1060,8 +1074,8 @@ print(response.choices[0].message.content)</pre>
             </div>
         </a>
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/xiaohongshu.html" target="_blank" rel="noopener noreferrer">
-            <div class="showcase-media">
-                <img src="xiaohongshu_preview.png" alt="Rendered preview of the Xiaohongshu-style app" loading="lazy">
+            <div class="showcase-media phone-preview">
+                <img src="xiaohongshu_preview_crop.png" alt="Rendered preview of the Xiaohongshu-style app" loading="lazy">
             </div>
             <div class="showcase-body">
                 <h4>Xiaohongshu-style App</h4>
@@ -1078,7 +1092,9 @@ print(response.choices[0].message.content)</pre>
     <div class="showcase-grid">
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html" target="_blank" rel="noopener noreferrer">
             <div class="showcase-media">
-                <img src="bouncing_balls_preview.png" alt="Bouncing balls in a rotating wooden frame demo" loading="lazy">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="bouncing_balls_preview.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="showcase-body">
                 <h4>Bouncing Balls in Rotating Frame</h4>
@@ -1087,8 +1103,10 @@ print(response.choices[0].message.content)</pre>
             </div>
         </a>
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/bingo.html" target="_blank" rel="noopener noreferrer">
-            <div class="showcase-media contain">
-                <img src="bingo_blast_preview.png" alt="Bingo match game demo" loading="lazy">
+            <div class="showcase-media">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="bingo_preview.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="showcase-body">
                 <h4>Bingo Match Game</h4>
@@ -1098,7 +1116,9 @@ print(response.choices[0].message.content)</pre>
         </a>
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html" target="_blank" rel="noopener noreferrer">
             <div class="showcase-media">
-                <img src="https://picture-search.tiangong.cn/skyclaw-demos/2048.mp4?x-oss-process=video/snapshot,t_0,f_jpg" alt="2048 puzzle game demo" loading="lazy">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="2048_preview.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="showcase-body">
                 <h4>2048 Puzzle Game</h4>
@@ -1108,7 +1128,9 @@ print(response.choices[0].message.content)</pre>
         </a>
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html" target="_blank" rel="noopener noreferrer">
             <div class="showcase-media">
-                <img src="https://picture-search.tiangong.cn/skyclaw-demos/tetris.mp4?x-oss-process=video/snapshot,t_0,f_jpg" alt="Tetris game demo" loading="lazy">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="tetris.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="showcase-body">
                 <h4>Tetris</h4>
@@ -1118,7 +1140,9 @@ print(response.choices[0].message.content)</pre>
         </a>
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/mario_game.html" target="_blank" rel="noopener noreferrer">
             <div class="showcase-media">
-                <img src="super_mario_preview.png" alt="Rendered preview of the Super Mario platform game demo" loading="lazy">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="super_mario_preview.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="showcase-body">
                 <h4>Super Mario Platform Game</h4>
@@ -1126,9 +1150,47 @@ print(response.choices[0].message.content)</pre>
                 <span>Try live demo &rarr;</span>
             </div>
         </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="airplane_battle.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="showcase-body">
+                <h4>Airplane Battle</h4>
+                <p>Arcade shooter demo with enemy waves, movement, and combat interactions.</p>
+                <span>Try live demo &rarr;</span>
+            </div>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/chess.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="chess_preview.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="showcase-body">
+                <h4>Chess Game</h4>
+                <p>Human-vs-computer board game flow with move selection and game-state handling.</p>
+                <span>Open fullscreen &rarr;</span>
+            </div>
+        </a>
+        <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="showcase-media">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="texas_holdem_preview.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="showcase-body">
+                <h4>Texas Hold'em Poker</h4>
+                <p>Card-table demo with betting flow, player state, and turn-based game interaction.</p>
+                <span>Try live demo &rarr;</span>
+            </div>
+        </a>
         <a class="showcase-card" href="https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html" target="_blank" rel="noopener noreferrer">
             <div class="showcase-media">
-                <img src="financial_terminal_preview.png" alt="Rendered preview of the financial terminal app" loading="lazy">
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="financial_terminal_preview.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="showcase-body">
                 <h4>Financial Terminal (CN)</h4>
