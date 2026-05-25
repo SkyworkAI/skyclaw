@@ -97,3 +97,20 @@ Example screenshot command:
 ## Deployment
 
 This is a static site. Deploy by pushing the repository to the branch configured for GitHub Pages.
+
+## Citation
+
+If you reference SkyClaw-v1.0 in your work, please use the following citation:
+
+```bibtex
+@misc{skyclaw2026,
+  title={SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost},
+  author={Peiyu Wang and Min Zou and Liang Zeng and Weishen and Peng Cheng and Haoran Zhang and Yu Cheng and Yang Liu},
+  year={2026},
+  month={May},
+  howpublished={\url{https://skyworkai.github.io/skyclaw/}},
+  url={https://skyworkai.github.io/skyclaw/},
+}
+```
+
+*Corresponding authors: Yu Cheng, Yang Liu*

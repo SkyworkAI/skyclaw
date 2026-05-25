@@ -8,6 +8,45 @@
     <meta property="og:description" content="Try SkyClaw-v1.0 and SkyClaw-v1.0-lite for complex tool use, multi-turn agent workflows, and cost-sensitive production tasks.">
     <meta property="og:image" content="benchmark_style_chart_1600.png">
     <meta property="og:type" content="website">
+
+    <!-- Google Scholar Citation Meta Tags -->
+    <meta name="citation_title" content="SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost">
+    <meta name="citation_author" content="Skywork AI">
+    <meta name="citation_publication_date" content="2026/05/22">
+    <meta name="citation_online_date" content="2026/05/22">
+    <meta name="citation_fulltext_html_url" content="https://skyworkai.github.io/skyclaw/">
+    <meta name="citation_publisher" content="Skywork AI">
+    <meta name="citation_language" content="en">
+    <meta name="citation_journal_title" content="Skywork AI Technical Reports">
+    <meta name="citation_technical_report_institution" content="Skywork AI">
+    <meta name="citation_abstract" content="SkyClaw-v1.0 is a high-performance agent model with million-token context window, optimized for complex tool use, multi-turn agent workflows, and cost-sensitive production tasks through large-scale mid-training, synthetic SFT, and agentic reinforcement learning. It outperforms mainstream open-source models including Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 series, while approaching larger proprietary models on Claw-related tasks at a fraction of the cost.">
+
+    <!-- Schema.org ScholarlyArticle JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost",
+        "alternativeHeadline": "SkyClaw-v1.0 Technical Report and Model Card",
+        "author": {
+            "@type": "Organization",
+            "name": "Skywork AI",
+            "url": "https://skyworkai.github.io/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Skywork AI"
+        },
+        "datePublished": "2026-05-22",
+        "dateModified": "2026-05-25",
+        "url": "https://skyworkai.github.io/skyclaw/",
+        "inLanguage": "en",
+        "genre": "Technical Report",
+        "keywords": ["agent model", "large language model", "million-context", "tool use", "multi-turn agent", "reinforcement learning", "model card"],
+        "abstract": "SkyClaw-v1.0 is a high-performance agent model with million-token context window, optimized for complex tool use, multi-turn agent workflows, and cost-sensitive production tasks through large-scale mid-training, synthetic SFT, and agentic reinforcement learning."
+    }
+    </script>
+
     <title>SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost</title>
     <style>
         :root {
@@ -1228,6 +1267,170 @@ print(response.choices[0].message.content)</pre>
     </div>
 
 </main>
+
+<!-- Citation -->
+<section class="article" style="padding-top:48px;padding-bottom:48px;border-top:1px solid var(--line);">
+    <h2>Citation</h2>
+    <p>If you reference SkyClaw-v1.0 in your work, please use the following citation:</p>
+    <div class="citation-block" id="citation-block">
+        <div class="citation-text" id="citation-text">@misc{skyclaw2026,
+  title={SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost},
+  author={Peiyu Wang and Min Zou and Liang Zeng and Wei Shen and Peng Cheng and Haoran Zhang and Yu Cheng and Yang Liu},
+  year={2026},
+  month={May},
+  howpublished={\url{https://skyworkai.github.io/skyclaw/}},
+  url={https://skyworkai.github.io/skyclaw/},
+}</div>
+        <button class="copy-btn" id="copy-citation-btn" onclick="copyCitation()" title="Copy citation">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-btn-label">Copy</span>
+        </button>
+    </div>
+</section>
+
+<style>
+    .citation-block {
+        background: #171724;
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin: 24px 0;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    .citation-text {
+        color: #f3f4f6;
+        font-size: 0.85rem;
+        line-height: 1.7;
+        flex: 1;
+        font-family: 'SF Mono', 'Fira Code', monospace;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+    .citation-text em {
+        color: #e5e7eb;
+        font-style: italic;
+    }
+    .citation-note {
+        margin: 14px 0 0;
+        font-size: 0.85rem;
+        color: var(--muted);
+    }
+    .copy-btn {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px;
+        border: 1px solid #3b3d57;
+        border-radius: 8px;
+        background: transparent;
+        color: #9ca3af;
+        font-size: 0.8rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        white-space: nowrap;
+    }
+    .copy-btn:hover {
+        background: #2a2b3d;
+        color: #e5e7eb;
+        border-color: #555778;
+    }
+    .copy-btn.copied {
+        color: #16a34a;
+        border-color: #16a34a;
+    }
+    @media (max-width: 640px) {
+        .citation-block {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .copy-btn {
+            align-self: flex-end;
+        }
+    }
+
+    /* Print-friendly styles for PDF generation */
+    @media print {
+        header, footer, .copy-btn, .hero-actions, .header-links, .header-cta {
+            display: none !important;
+        }
+        .article {
+            max-width: 100%;
+            padding: 0;
+        }
+        .citation-block {
+            background: #fff !important;
+            color: #000 !important;
+            border: 1px solid #ccc !important;
+            page-break-inside: avoid;
+        }
+        .citation-text {
+            color: #000 !important;
+        }
+        .code-block {
+            background: #f5f5f5 !important;
+            border: 1px solid #ddd !important;
+            page-break-inside: avoid;
+        }
+        .code-block pre {
+            color: #333 !important;
+        }
+        .showcase-card {
+            page-break-inside: avoid;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        a[href^="http"]::after {
+            content: " (" attr(href) ")";
+            font-size: 0.8em;
+            color: #666;
+        }
+    }
+</style>
+
+<script>
+function copyCitation() {
+    var text = '@misc{skyclaw2026,\n  title={SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost},\n  author={Peiyu Wang and Min Zou and Liang Zeng and Weishen and Peng Cheng and Haoran Zhang and Yu Cheng and Yang Liu},\n  year={2026},\n  month={May},\n  howpublished={\\url{https://skyworkai.github.io/skyclaw/}},\n  url={https://skyworkai.github.io/skyclaw/},\n}';
+    var btn = document.getElementById('copy-citation-btn');
+    var label = btn.querySelector('.copy-btn-label');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+            showCopied(btn, label);
+        }).catch(function() {
+            fallbackCopy(text, btn, label);
+        });
+    } else {
+        fallbackCopy(text, btn, label);
+    }
+}
+function fallbackCopy(text, btn, label) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand('copy');
+        showCopied(btn, label);
+    } catch(e) {
+        label.textContent = 'Failed';
+    }
+    document.body.removeChild(ta);
+}
+function showCopied(btn, label) {
+    btn.classList.add('copied');
+    label.textContent = 'Copied!';
+    setTimeout(function() {
+        btn.classList.remove('copied');
+        label.textContent = 'Copy';
+    }, 2000);
+}
+</script>
 
 <footer>
     <div class="inner">
