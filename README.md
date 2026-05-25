@@ -27,33 +27,16 @@ The page features locally rendered screenshots and short videos to keep the site
 
 | Demo | Preview | Live |
 | --- | :---: | --- |
-| Bouncing Balls | ![Bouncing balls preview](bouncing_balls_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html) |
-| Bingo Match | ![Bingo match preview](bingo_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/bingo.html) |
-| 2048 Puzzle | ![2048 puzzle preview](2048_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html) |
-| Tetris | ![Tetris preview](tetris_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html) |
-| Super Mario | ![Super Mario preview](super_mario_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/mario_game.html) |
-| Airplane Battle | ![Airplane battle preview](airplane_battle_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html) |
-| Chess | ![Chess preview](chess_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/chess.html) |
-| Texas Hold'em | ![Texas holdem preview](texas_holdem_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem/index.html) |
-| Financial Terminal | ![Financial terminal preview](financial_terminal_preview.mp4) | [Open](https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html) |
+| Bouncing Balls | ![Bouncing balls preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/bouncing_balls_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html) |
+| Bingo Match | ![Bingo match preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/bingo_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/bingo.html) |
+| 2048 Puzzle | ![2048 puzzle preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/2048_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html) |
+| Tetris | ![Tetris preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/tetris_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html) |
+| Super Mario | ![Super Mario preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/super_mario_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/mario_game.html) |
+| Airplane Battle | ![Airplane battle preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/airplane_battle_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html) |
+| Chess | ![Chess preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/chess_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/chess.html) |
+| Texas Hold'em | ![Texas holdem preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/texas_holdem_preview.mp4) | [Play](https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem/index.html) |
+| Financial Terminal | ![Financial terminal preview](https://raw.githubusercontent.com/skyworkai/skyclaw/main/financial_terminal_preview.mp4) | [Open](https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html) |
 
-## Run Locally
-
-Start a local server from this directory:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open [http://localhost:8000](http://localhost:8000) in your browser.
-
-## Project Structure
-
-- `index.html` — main release page
-- `benchmark_style_chart_1600.png` — optimized benchmark chart
-- `benchmark_style_chart.png` — original chart source
-- `*_preview.png` — static app and research screenshots
-- `*_preview.mp4` — animated game and interactive demos
 
 ## Citation
 
