@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skyworkai.github.io/skyclaw/sitemap.xml
