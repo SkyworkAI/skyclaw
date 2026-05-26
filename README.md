@@ -51,64 +51,24 @@ The release page features locally rendered screenshots and short videos, showcas
 
 <table>
   <tr>
-    <th>Demo</th>
-    <th align="center">Preview</th>
-    <th align="center">Live</th>
+    <td align="center"><b>Bouncing Balls</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html">Play</a></td>
+    <td align="center"><b>Bingo Match</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/bingo.html">Play</a></td>
+    <td align="center"><b>2048 Puzzle</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html">Play</a></td>
   </tr>
   <tr>
-    <td>Bouncing Balls</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/bouncing_balls_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/bouncing_balls.english.html">Play</a></td>
+    <td align="center"><b>Tetris</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html">Play</a></td>
+    <td align="center"><b>Super Mario</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/mario_game.html">Play</a></td>
+    <td align="center"><b>Airplane Battle</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html">Play</a></td>
   </tr>
   <tr>
-    <td>Bingo Match</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/bingo_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/bingo.html">Play</a></td>
+    <td align="center"><b>Chess</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/chess.html">Play</a></td>
+    <td align="center"><b>Texas Hold'em</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem/index.html">Play</a></td>
+    <td align="center"><b>Financial Terminal</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html">Open</a></td>
   </tr>
   <tr>
-    <td>2048 Puzzle</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/2048_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/2048/index.html">Play</a></td>
-  </tr>
-  <tr>
-    <td>Tetris</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/tetris_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/tetris/index.html">Play</a></td>
-  </tr>
-  <tr>
-    <td>Super Mario</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/super_mario_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/mario_game.html">Play</a></td>
-  </tr>
-  <tr>
-    <td>Airplane Battle</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/airplane_battle_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/airplane_battle/index.html">Play</a></td>
-  </tr>
-  <tr>
-    <td>Chess</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/chess_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/chess.html">Play</a></td>
-  </tr>
-  <tr>
-    <td>Texas Hold'em</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/texas_holdem_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/texas_holdem/index.html">Play</a></td>
-  </tr>
-  <tr>
-    <td>Financial Terminal</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/financial_terminal_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/financial_terminal_cn/index.html">Open</a></td>
-  </tr>
-  <tr>
-    <td>Tank Roguelike</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/tank_roguelike_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/tank-roguelike.html">Play</a></td>
-  </tr>
-  <tr>
-    <td>Slay the Spire (杀戮尖塔)</td>
-    <td align="center"><img src="https://raw.githubusercontent.com/skyworkai/skyclaw/main/assets/slay_the_spire_preview.mp4" width="200"/></td>
-    <td align="center"><a href="https://picture-search.tiangong.cn/skyclaw-demos/%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94.html">Play</a></td>
+    <td align="center"><b>Tank Roguelike</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/tank-roguelike.html">Play</a></td>
+    <td align="center"><b>Slay the Spire (杀戮尖塔)</b><br><a href="https://picture-search.tiangong.cn/skyclaw-demos/%E6%9D%80%E6%88%AE%E5%B0%96%E5%A1%94.html">Play</a></td>
+    <td></td>
   </tr>
 </table>
 
