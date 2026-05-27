@@ -22,6 +22,8 @@ SkyClaw-v1.0 is a high-performance agent model by [Skywork AI](https://huggingfa
 | **SkyClaw-v1.0** | 0.5 | 4.0 | Strongest agent performance |
 | **SkyClaw-v1.0-lite** | 0.3 | 2.0 | Speed & cost-sensitive tasks |
 
+🎉 Free for a limited time: Both SkyClaw-v1.0 and SkyClaw-v1.0-lite are currently free to use. 
+
 ## Benchmarks
 
 SkyClaw-v1.0 outperforms Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 series across all major agent benchmarks, while approaching larger proprietary models on Claw-related tasks.
