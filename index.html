@@ -374,6 +374,44 @@
             font-size: 1.02rem;
         }
 
+        .update-card {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+            gap: 24px;
+            align-items: center;
+            margin: 36px 0;
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .update-card .eyebrow {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 750;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .update-card h2 {
+            margin: 0 0 12px;
+        }
+
+        .update-card p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .update-card img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid #17111f;
+            background: #12081d;
+        }
+
         .training-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -805,6 +843,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .update-card {
+                grid-template-columns: 1fr;
+                padding: 18px;
+            }
+
             .benchmark-figure {
                 padding: 14px;
             }
@@ -924,6 +967,16 @@
     <div class="callout">
         <p>We are launching a free trial period — <a class="text-link" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1?tab=api" target="_blank" rel="noopener noreferrer">try SkyClaw-v1.0</a> or <a class="text-link" href="https://www.apifree.ai/model/skywork-ai/skyclaw-v1-lite?tab=info" target="_blank" rel="noopener noreferrer">try SkyClaw-v1.0-lite</a>. Following the trial, we will progressively open-source each model version.</p>
     </div>
+
+    <!-- Multimodal Update -->
+    <section class="update-card" aria-labelledby="multimodal-update">
+        <div>
+            <div class="eyebrow">Update</div>
+            <h2 id="multimodal-update">Multimodal Image Input</h2>
+            <p>SkyClaw now supports image input for agent workflows. Provide a UI screenshot as the visual prompt, then ask the model to understand, plan, or rebuild the interface.</p>
+        </div>
+        <img src="assets/netflix_mobile_image_input.png" alt="Netflix mobile UI screenshot used as an image input example" loading="lazy" decoding="async">
+    </section>
 
     <!-- Benchmark -->
     <h2 id="benchmark">Strong Performance on Agent Benchmarks</h2>

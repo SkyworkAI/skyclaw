@@ -24,6 +24,32 @@ SkyClaw-v1.0 is a high-performance agent model by [Skywork AI](https://huggingfa
 
 🎉 Free for a limited time: Both SkyClaw-v1.0 and SkyClaw-v1.0-lite are currently free to use. 
 
+## What's New
+
+### Multimodal Image Input (2026-06-10)
+
+SkyClaw now supports multimodal image input. Provide a UI screenshot as the visual prompt and ask SkyClaw to understand the layout, identify content, and rebuild the interface as working code — end to end.
+
+<table>
+  <tr>
+    <td align="center" style="padding-right:16px;vertical-align:top;">
+      <b style="color:#4f46e5;">📥 Input</b><br>
+      <span style="font-size:12px;color:#888;">Reference screenshot</span><br><br>
+      <img src="assets/netflix_mobile_image_input.png" width="380" alt="Netflix reference screenshot"/>
+    </td>
+    <td align="center" style="padding-left:16px;vertical-align:top;">
+      <b style="color:#16a34a;">📤 Output</b><br>
+      <span style="font-size:12px;color:#888;">Generated HTML (interactive)</span><br><br>
+      <img src="assets/netflix_multimodal_demo.png" width="380" alt="Netflix generated output"/>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" style="padding-top:10px;">
+      <span style="font-size:12px;color:#888;">Given a Netflix mobile UI mockup, SkyClaw parsed the layout, identified 18 title posters, replaced SVG placeholders with real theatrical photos, and generated a fully interactive HTML clone with tab navigation, horizontal scroll rows, and animated profile bubble.</span>
+    </td>
+  </tr>
+</table>
+
 ## Benchmarks
 
 SkyClaw-v1.0 outperforms Minimax 2.7, DeepSeek V4 Flash, and Qwen 3.6 series across all major agent benchmarks, while approaching larger proprietary models on Claw-related tasks.
@@ -81,7 +107,7 @@ If you reference SkyClaw-v1.0 in your work, please use the following citation:
 ```bibtex
 @misc{skyclaw2026,
   title={SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost},
-  author={Peiyu Wang and Min Zou and Liang Zeng and Weishen and Peng Cheng and Haoran Zhang and Yu Cheng and Yang Liu},
+  author={Peiyu Wang and Min Zou and Liang Zeng and Wei shen and Peng Cheng and Haoran Zhang and Yu Cheng and Yang Liu},
   year={2026},
   month={May},
   howpublished={\url{https://skyworkai.github.io/skyclaw/}},
