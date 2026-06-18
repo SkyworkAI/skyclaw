@@ -107,7 +107,7 @@ If you reference SkyClaw-v1.0 in your work, please use the following citation:
 ```bibtex
 @misc{skyclaw2026,
   title={SkyClaw-v1.0: A Million-Context Agent Model at Ultra-Low Cost},
-  author={Peiyu Wang and Min Zou and Liang Zeng and Wei shen and Peng Cheng and Haoran Zhang and Yu Cheng and Yang Liu},
+  author={Peiyu Wang and Min Zou and Liang Zeng and Wei Shen and Peng Cheng and Haoran Zhang and Yu Cheng and Yang Liu},
   year={2026},
   month={May},
   howpublished={\url{https://skyworkai.github.io/skyclaw/}},
